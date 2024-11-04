@@ -1,0 +1,17 @@
+﻿@model ProductInventoryApp.Models.Product
+
+
+<h2>Ta bort produkt</h2>
+
+
+<p>Är du säker på att du vill ta bort denna produkt?</p>
+
+<h4>@Model.Name</h4>
+<p><strong>Pris:</strong> @Model.Price</p>
+
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Ta bort</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Avsluta</a>
+</form>

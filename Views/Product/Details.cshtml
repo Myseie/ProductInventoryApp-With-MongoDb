@@ -1,0 +1,13 @@
+﻿@model ProductInventoryApp.Models.Product
+
+
+<h2>Produkt detaljer</h2>
+
+
+<div>
+    <h4>@Model.Name</h4>
+    <p><strong>Pris:</strong> @Model.Price</p>
+    <p><strong>Beskrivning:</strong>@Model.Description</p>
+</div>
+
+<a href="@Url.Action("Index")" class="btn btn-secondary">Tillbaka till listan</a>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ProductInventoryApp.Models.Product>
+
+<h2>Produkter</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Namn</th>
+            <th>Pris</th>
+            <th>Beskrivning</th>
+            <th>Åtgärder</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+                <td><a asp-action="Details" asp-route-id="@product.Id" class="btn btn-warning">Detaljer</a></td>
+                <td><a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary">Redigera</a></td>
+                <td><a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger">Ta bort</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create")" class="btn btn-primary">Skapa en ny produkt</a>

@@ -1,0 +1,35 @@
+﻿@model ProductInventoryApp.Models.Product
+
+
+<h2>Redigera produkt</h2>
+
+
+<form asp-action="Edit" method="post" class="horizontal">
+    <div>
+        <label class="control-label">Namn</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label class="control-label">Pris</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div>
+        <label class="control-label">Beskrivning</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <button type="submit">Spara ändringar</button>
+    
+</form>
+
+<a href="@Url.Action("Index", "Product")">Tillbaka till produktlistan</a>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,28 @@
+﻿@model ProductInventoryApp.Models.Product
+
+<h2>Skapa produkt</h2>
+
+<form asp-action="Create" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label">Namn</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Pris</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Beskrivning</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Skapa</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
